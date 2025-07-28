@@ -1,0 +1,51 @@
+{
+  "name": "pieces-dreamzcmms",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/pieces/custom/dreamzcmms/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "manifestRootsToUpdate": [
+        "dist/{projectRoot}"
+      ],
+      "currentVersionResolver": "git-tag",
+      "fallbackCurrentVersionResolver": "disk"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/pieces/custom/dreamzcmms",
+        "tsConfig": "packages/pieces/custom/dreamzcmms/tsconfig.lib.json",
+        "packageJson": "packages/pieces/custom/dreamzcmms/package.json",
+        "main": "packages/pieces/custom/dreamzcmms/src/index.ts",
+        "assets": [
+          "packages/pieces/custom/dreamzcmms/*.md",
+          {
+            "input": "packages/pieces/custom/dreamzcmms/src/i18n",
+            "output": "./src/i18n",
+            "glob": "**/!(i18n.json)"
+          }
+        ],
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "updateBuildableProjectDepsInPackageJson": true
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    }
+  }
+}

@@ -290,6 +290,9 @@
       "@activepieces/piece-docusign": [
         "packages/pieces/community/docusign/src/index.ts"
       ],
+      "@activepieces/piece-dreamzcmms": [
+        "packages/pieces/custom/dreamzcmms/src/index.ts"
+      ],
       "@activepieces/piece-drip": [
         "packages/pieces/community/drip/src/index.ts"
       ],
