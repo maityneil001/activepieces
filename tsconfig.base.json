@@ -519,6 +519,9 @@
       "@activepieces/piece-linkedin": [
         "packages/pieces/community/linkedin/src/index.ts"
       ],
+      "@activepieces/piece-llama-parse": [
+        "packages/pieces/community/llama-parse/src/index.ts"
+      ],
       "@activepieces/piece-llmrails": [
         "packages/pieces/community/llmrails/src/index.ts"
       ],
